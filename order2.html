@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+
+    <script src="extrastuff.js"></script>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navBar">
+    <div class="container-fluid">
+      <a class="navbar-brand">Sister Sweets</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index2.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery2.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order2.html">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="review2.html">Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutme.html">About Lucy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row test">
+        <div class="col-md-6"> <!--Google form start, prices, 1 cake - $60, 2 cakes do 60x2, etc.-->
+          <form action="" method="get">
+            <fieldset class="border border-dark p-3">
+              <legend class="float-none w-auto px-3">Enter an Order!</legend>
+              <label>
+                Name (Last, First):
+                <br>
+                <input type="text" name="">
+              </label>
+              <br><br>
+              <label>
+                Email:
+                <br>
+                <input type="email" name="email">
+              </label>
+              <br><br>
+              <label> 
+                What do you want?
+              </label>
+              <select name="referral" id="orderWant">
+                <option value="cake"> Cake - $30.00</option>
+                <option value="cookie"> Cookies - $25.00 </option>
+                <option value="brownies"> Brownies - $25.00</option>
+                <option value="cupcakes"> Cupcakes - $30.00</option>
+                </select>
+              <br><br>
+              <label>
+                How many would you like?
+                <br>
+                <input type="number" id="howMany">
+              </label>
+              <br><br>
+              <label>
+                What would you like?
+                <br>
+                <textarea rows="2" cols="40" id="enterOrder"></textarea>
+              </label>
+              <br><br>
+              <label>
+                Any allergies?
+                <br>
+                <textarea rows="1" cols="40" id="allergies"></textarea>
+              </label>
+              <br><br>
+              <input type="submit" value="Submit Order" onclick="sendTheOrder">
+              <p>The total price of your order will be<b><span id="numTotal"></b></span></p>
+            </fieldset>
+          </form>
+          <form action="https://formsubmit.co/hannahkdao@gmail.com" method="POST">
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="name" required>
+            <input type="email" name="email" required>
+            <button type="submit">Send</button>
+          </form>
+        </div> <!--Google form end-->
+        <div class="col-md-4"> <!--stickers of her work start-->
+          <script>
+            function orderCalculate(num1){
+              let numTotal = document.getElementById("numTotal")
+              document.getElementById("numTotal").innerHTML = num1*25;
+              
+            }
+            function sendTheOrder(){
+              let num1 = parseInt(document.getElementById("howMany").value)
+              orderCalculate(num1)
+            }
+          </script>
+        </div> <!--Stickers of her work- end-->
+    </div>
+  </div>
+  <br>
+  <footer>Created by: Rose,Hannah,Gracie,Sophia</footer>
+</body>
+</html> 
