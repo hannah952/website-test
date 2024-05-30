@@ -64,10 +64,10 @@
                 What do you want?
               </label>
               <select name="referral" id="orderWant">
-                <option value="cake"> Cake - $30.00</option>
-                <option value="cookie"> Cookies - $25.00 </option>
-                <option value="brownies"> Brownies - $25.00</option>
-                <option value="cupcakes"> Cupcakes - $30.00</option>
+                <option value="cake" id="cakee"> Cake - $30.00</option>
+                <option value="cookie" id="cookiee"> Cookies - $25.00 </option>
+                <option value="brownies" id="browniee"> Brownies - $25.00</option>
+                <option value="cupcakes" id="cupcakee"> Cupcakes - $30.00</option>
                 </select>
               <br><br>
               <label>
@@ -88,7 +88,7 @@
                 <textarea rows="1" cols="40" id="allergies"></textarea>
               </label>
               <br><br>
-              <input type="submit" value="Submit Order" onclick="sendTheOrder">
+              <input type="submit" value="Submit Order" onclick="sendTheOrder()">
               <p>The total price of your order will be<b><span id="numTotal"></b></span></p>
             </fieldset>
           </form>
@@ -102,8 +102,24 @@
         <div class="col-md-4"> <!--stickers of her work start-->
           <script>
             function orderCalculate(num1){
-              let numTotal = document.getElementById("numTotal")
-              document.getElementById("numTotal").innerHTML = num1*25;
+              var item
+              var orderr= document.getElementById("orderWant");
+              var value=orderr.options[orderr.selectedIndex].value
+              if(value== "cake"){
+                item=30;
+              }
+              else if(value=="cookie"){
+                item=25;
+              }
+              else if(value=="brownies"){
+                item=25;
+              }
+              else if(value=="cupcakes"){
+                item=30
+              }
+              var numTotal = document.getElementById("numTotal");
+              var textt= num1*item
+              document.getElementById("numTotal").textContent = textt;
               
             }
             function sendTheOrder(){
